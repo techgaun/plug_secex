@@ -1,6 +1,6 @@
 defmodule PlugSecex do
   @moduledoc """
-  This module adds sensible HTTP headers to secure the web applications written in Phoenix/Elixir.
+  This module adds sensible HTTP headers to secure the web applications written in Elixir.
   """
 
   import Plug.Conn, only: [delete_resp_header: 2, update_resp_header: 4]
