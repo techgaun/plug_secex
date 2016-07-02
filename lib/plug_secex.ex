@@ -7,6 +7,33 @@ defmodule PlugSecex do
     pipeline :browser do
       plug PlugSecex
     end
+
+  You can also specify to override or disable particular set of headers.
+
+    pipeline :browser do
+      plug PlugSecex,
+        overrides: [
+          "x-dns-prefetch-control": "on",
+          "x-frame-options": "DENY",
+          "custom-header": "value"
+        ],
+        except: [
+          "x-powered-by"
+        ]
+    end
+
+  The supported headers and their values by default are:
+
+    "x-content-type-options": "nosniff",
+    "x-dns-prefetch-control": "off",
+    "strict-transport-security": "max-age=31536000",
+    "x-xss-protection": "1; mode=block",
+    "x-frame-options": "SAMEORIGIN",
+    "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval'"
+
+  The headers that are removed by default are:
+    "x-powered-by",
+    "server"
   """
   import PlugSecex.{Defaults, HeaderTransform}
 

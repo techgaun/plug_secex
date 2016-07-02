@@ -25,7 +25,7 @@ defmodule PlugSecex.HeaderTransform do
     end)
   end
 
-  defp _set(conn, k, v) when is_bitstring(v) do
+  defp _set(conn, k, v) when is_bitstring(k) and is_bitstring(v) do
     update_resp_header(conn, k, v, fn(_) -> v end)
   end
   defp _set(conn, _k, _v), do: conn
