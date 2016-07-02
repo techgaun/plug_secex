@@ -3,7 +3,7 @@ defmodule PlugSecex.Mixfile do
 
   def project do
     [app: :plug_secex,
-     version: "0.1.0",
+     version: "0.1.1",
      elixir: "~> 1.2",
      description: "A module to insert sensible security headers",
      package: package,

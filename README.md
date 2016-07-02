@@ -12,7 +12,7 @@ Add plug_secex to your list of dependencies in `mix.exs`:
 
 ```
 def deps do
-  [{:plug_secex, "~> 0.0.1"}]
+  [{:plug_secex, "~> 0.1.1"}]
 end
 ```
 

@@ -4,6 +4,7 @@ defmodule PlugSecex.Defaults do
   """
 
   @set_defaults [
+    "server": "",
     "x-content-type-options": "nosniff",
     "x-dns-prefetch-control": "off",
     "strict-transport-security": "max-age=31536000",
@@ -14,7 +15,6 @@ defmodule PlugSecex.Defaults do
 
   @delete_defaults [
     :"x-powered-by",
-    :"server"
   ]
 
   def to_set, do: @set_defaults
