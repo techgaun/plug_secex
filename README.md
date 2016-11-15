@@ -1,4 +1,4 @@
-# PlugSecex [![Hex version](https://img.shields.io/hexpm/v/plug_secex.svg "Hex version")](https://hex.pm/packages/plug_secex) ![Hex downloads](https://img.shields.io/hexpm/dt/plug_secex.svg "Hex downloads") [![Build Status](https://semaphoreci.com/api/v1/samaracharya/plug_secex/branches/master/badge.svg)](https://semaphoreci.com/samaracharya/plug_secex) [![Coverage Status](https://coveralls.io/repos/github/techgaun/plug_secex/badge.svg?branch=master)](https://coveralls.io/github/techgaun/plug_secex?branch=master)
+# PlugSecex [![Hex version](https://img.shields.io/hexpm/v/plug_secex.svg "Hex version")](https://hex.pm/packages/plug_secex) ![Hex downloads](https://img.shields.io/hexpm/dt/plug_secex.svg "Hex downloads") [![Build Status](https://semaphoreci.com/api/v1/techgaun/plug_secex/branches/master/badge.svg)](https://semaphoreci.com/techgaun/plug_secex) [![Coverage Status](https://coveralls.io/repos/github/techgaun/plug_secex/badge.svg?branch=master)](https://coveralls.io/github/techgaun/plug_secex?branch=master)
 
 > Plug that adds various HTTP Headers to make Phoenix/Elixir app more secure
 
