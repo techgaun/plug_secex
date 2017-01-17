@@ -50,10 +50,10 @@ defmodule PlugSecex do
   end
 
   defp process_header(conn, overrides, except) do
-    headers_to_set = to_set
+    headers_to_set = to_set()
       |> Keyword.merge(overrides)
       |> Keyword.drop(except)
-    headers_to_delete = to_delete
+    headers_to_delete = to_delete()
       |> Enum.filter(fn x -> Enum.member?(except, x) === false end)
     conn
     |> set(headers_to_set)

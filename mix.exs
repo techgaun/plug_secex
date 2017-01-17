@@ -3,10 +3,10 @@ defmodule PlugSecex.Mixfile do
 
   def project do
     [app: :plug_secex,
-     version: "0.1.1",
+     version: "0.1.2",
      elixir: "~> 1.2",
      description: "A module to insert sensible security headers",
-     package: package,
+     package: package(),
      test_coverage: [tool: ExCoveralls],
      preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test],
      build_embedded: Mix.env == :prod,
