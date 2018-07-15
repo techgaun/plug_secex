@@ -4,17 +4,18 @@ defmodule PlugSecex.Defaults do
   """
 
   @set_defaults [
-    "server": "",
+    server: "",
     "x-content-type-options": "nosniff",
     "x-dns-prefetch-control": "off",
     "strict-transport-security": "max-age=31536000",
     "x-xss-protection": "1; mode=block",
     "x-frame-options": "SAMEORIGIN",
-    "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval'"
+    "content-security-policy":
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval'"
   ]
 
   @delete_defaults [
-    :"x-powered-by",
+    :"x-powered-by"
   ]
 
   def to_set, do: @set_defaults

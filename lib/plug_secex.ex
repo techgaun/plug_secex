@@ -41,8 +41,10 @@ defmodule PlugSecex do
   def init(opts), do: opts
 
   def call(conn, opts) do
-    excepts = (opts[:except] || [])
+    excepts =
+      (opts[:except] || [])
       |> Enum.map(fn x -> String.to_atom(x) end)
+
     overrides = opts[:overrides] || []
 
     conn
@@ -50,11 +52,15 @@ defmodule PlugSecex do
   end
 
   defp process_header(conn, overrides, except) do
-    headers_to_set = to_set()
+    headers_to_set =
+      to_set()
       |> Keyword.merge(overrides)
       |> Keyword.drop(except)
-    headers_to_delete = to_delete()
+
+    headers_to_delete =
+      to_delete()
       |> Enum.filter(fn x -> Enum.member?(except, x) === false end)
+
     conn
     |> set(headers_to_set)
     |> delete(headers_to_delete)

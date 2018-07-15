@@ -2,17 +2,24 @@ defmodule PlugSecex.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :plug_secex,
-     version: "0.1.2",
-     elixir: "~> 1.2",
-     description: "A module to insert sensible security headers",
-     package: package(),
-     test_coverage: [tool: ExCoveralls],
-     preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test],
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     docs: [],
-     deps: deps()]
+    [
+      app: :plug_secex,
+      version: "0.1.2",
+      elixir: "~> 1.2",
+      description: "A module to insert sensible security headers",
+      package: package(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ],
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      docs: [],
+      deps: deps()
+    ]
   end
 
   # Configuration for the OTP application
@@ -38,6 +45,7 @@ defmodule PlugSecex.Mixfile do
       {:ex_doc, "~> 0.12", only: :dev}
     ]
   end
+
   defp package do
     [
       maintainers: [
