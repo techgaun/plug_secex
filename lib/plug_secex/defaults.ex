@@ -11,7 +11,10 @@ defmodule PlugSecex.Defaults do
     "x-xss-protection": "1; mode=block",
     "x-frame-options": "SAMEORIGIN",
     "content-security-policy":
-      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval'"
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval'",
+    "cross-origin-window-policy": "deny",
+    "x-download-options": "noopen",
+    "x-permitted-cross-domain-policies": "none"
   ]
 
   @delete_defaults [
