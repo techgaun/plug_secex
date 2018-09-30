@@ -1,6 +1,6 @@
 defmodule PlugSecex.Defaults do
   @moduledoc """
-  Module giving default values for HTTP headers
+  This module defines default values for various HTTP headers.
   """
 
   @set_defaults [
