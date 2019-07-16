@@ -2,8 +2,6 @@
 
 > Plug that adds various HTTP Headers to make Phoenix/Elixir app more secure
 
-Warning: This is work in progress.
-
 ## Installation
 
 The package can be installed from hex as:
@@ -12,7 +10,7 @@ Add plug_secex to your list of dependencies in `mix.exs`:
 
 ```
 def deps do
-  [{:plug_secex, "~> 0.1.1"}]
+  [{:plug_secex, "~> 0.1.3"}]
 end
 ```
 
