@@ -44,6 +44,18 @@ You can also specify to override or disable particular set of headers.
         ]
     end
 
+If you need to determine one of these at run time - for instance, in order to
+use a content security policy that allows resources from a location
+configured in environment variables - you can pass a "module, function,
+arguments" tuple; calling that function with those arguments must return a
+list as shown in the previous example.
+
+    pipeline :browser do
+      plug PlugSecex,
+        overrides: {MyModule, :overrides, [arg1, arg2]},
+        except: {MyModule, :exceptions, [arg3]}
+    end
+
 The supported headers and their values by default are:
 
     "x-content-type-options": "nosniff",

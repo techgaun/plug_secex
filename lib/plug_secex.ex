@@ -22,6 +22,18 @@ defmodule PlugSecex do
           ]
       end
 
+  If you need to determine one of these at run time - for instance, in order to
+  use a content security policy that allows resources from a location
+  configured in environment variables - you can pass a "module, function,
+  arguments" tuple; calling that function with those arguments must return a
+  list as shown in the previous example.
+
+      pipeline :browser do
+        plug PlugSecex,
+          overrides: {MyModule, :overrides, [arg1, arg2]},
+          except: {MyModule, :exceptions, [arg3]}
+      end
+
   The supported headers and their values by default are:
 
       "x-content-type-options": "nosniff",
@@ -41,14 +53,26 @@ defmodule PlugSecex do
   def init(opts), do: opts
 
   def call(conn, opts) do
-    excepts =
-      (opts[:except] || [])
-      |> Enum.map(fn x -> String.to_atom(x) end)
+    overrides = expand_option(opts[:overrides])
 
-    overrides = opts[:overrides] || []
+    excepts =
+      expand_option(opts[:except])
+      |> Enum.map(fn x -> String.to_atom(x) end)
 
     conn
     |> process_header(overrides, excepts)
+  end
+
+  defp expand_option(value) when is_list(value), do: value
+
+  defp expand_option({module, function, args}) when is_list(args) do
+    apply(module, function, args)
+  end
+
+  defp expand_option(nil), do: []
+
+  defp expand_option(val) do
+    raise(ArgumentError, "invalid header option #{inspect(val)}")
   end
 
   defp process_header(conn, overrides, except) do
