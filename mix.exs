@@ -4,7 +4,7 @@ defmodule PlugSecex.Mixfile do
   def project do
     [
       app: :plug_secex,
-      version: "0.1.3",
+      version: "0.2.0",
       elixir: "~> 1.2",
       description: "A module to insert sensible security headers",
       package: package(),
@@ -42,7 +42,7 @@ defmodule PlugSecex.Mixfile do
     [
       {:plug, ">= 1.0.0"},
       {:excoveralls, "~> 0.5", only: :test},
-      {:ex_doc, "~> 0.12", only: :dev}
+      {:ex_doc, "~> 0.21.2", only: :dev}
     ]
   end
 
