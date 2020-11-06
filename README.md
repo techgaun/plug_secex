@@ -8,7 +8,7 @@ The package can be installed from hex as:
 
 Add plug_secex to your list of dependencies in `mix.exs`:
 
-```
+```elixir
 def deps do
   [{:plug_secex, "~> 0.1.3"}]
 end
@@ -16,7 +16,7 @@ end
 
 Or you can directly install it from github:
 
-```
+```elixir
 def deps do
   [{:plug_secex, github: "techgaun/plug_secex"}]
 end
